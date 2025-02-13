@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.navbar {
+    width: 100vw;
+}
+
+.canvas {
+    all: unset;
+    margin: auto;
+    height: 768px;
+    width: 1536px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: var(--bs-body-bg);
+    outline: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.center-div {
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    gap: 50px;
+    margin: auto;
+}
+
+.box {
+    all: unset;
+    outline: 1px solid rgba(255, 255, 255, 0.35);
+    display: inline-block;
+}
+
+.colorgrp {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.colorbtn {
+    height: 30px;
+    width: 30px;
+    border-radius: var();
+}
+
+#rainbowcolor {
+    background-image: conic-gradient(red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+#greyscalecolor {
+    background-image: radial-gradient(black, white);
+}
+
+.colorpicker {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+}
+
+#favcolor {
+    height: 30px;
+    width: 30px;
+    border: 0px;
+}
+
+.selected-color {
+    outline-offset: 2px;
+    outline: 2px solid white;
+}
+
+.colorpicker::before {
+    content: "+";
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size:40px;
+    color: white;
+    pointer-events: none; /* Ensures click goes to input */
+    transition: opacity 0.3s;
+}
+
+.colorpicker.selected::before {
+    opacity: 0; /* Hide the + when a color is selected */
+}
+
+#eraser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
